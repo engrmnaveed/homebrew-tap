@@ -24,9 +24,13 @@ cask "space16x" do
   caveats <<~EOS
     Space 16X is ad hoc signed and not notarized by Apple, so macOS blocks
     the first launch. To allow it once:
-      1. Open Space 16X, then dismiss the warning.
+      1. Open Space 16X and click Done in the warning.
+         Don't click Move to Trash, which deletes the app.
       2. Open System Settings > Privacy & Security.
-      3. Click Open Anyway next to the Space 16X message and confirm.
+      3. Under Security, click Open Anyway next to the Space 16X message.
+      4. Enter your password or use Touch ID, then click Open Anyway.
+
+    Open Anyway appears only after a launch attempt, for about an hour.
 
     Or remove the quarantine attribute yourself:
       xattr -dr com.apple.quarantine "#{appdir}/Space 16X.app"
