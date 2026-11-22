@@ -1,6 +1,6 @@
 cask "space16x" do
-  version "0.9.0"
-  sha256 "99454113e44394535e309e8ff7fc8cde94c2614f882aabb410974f5636653c85"
+  version "0.9.1"
+  sha256 "21ccb644149a18fb8afe0632373a4bb15a920155836d19d5fbe13bef91b61f33"
 
   url "https://github.com/engrmnaveed/diskspace-16x/releases/download/v#{version}/space16x-#{version}-macos-universal.zip"
   name "Space 16X"
