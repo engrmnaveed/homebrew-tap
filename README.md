@@ -2,6 +2,8 @@
 
 Homebrew packages for [DiskUse16x](https://github.com/engrmnaveed/diskuse16x), a free, read-only disk space analyzer: a native Mac app and a terminal explorer for macOS and Linux. It was called Space 16X before 1.0.
 
+Also here: [Display 16X](https://github.com/engrmnaveed/macdisplay-16x), menu bar controls for display resolution, brightness and volume. See [Display 16X](#display-16x) below.
+
 Add the tap and trust it once. Homebrew 6 and later load casks and formulas only from taps you trust.
 
 ```sh
@@ -38,6 +40,18 @@ brew install engrmnaveed/tap/du16x
 
 The `space16x` cask is now `diskuse16x`. `brew update` and `brew upgrade` move you over, and the app keeps your settings and saved scans. macOS sees a new app, so turn on Full Disk Access for **DiskUse16x** again if you use it. See [Upgrading from Space 16X](https://github.com/engrmnaveed/diskuse16x/blob/main/docs/install.md#upgrading-from-space-16x).
 
+## Display 16X
+
+```sh
+brew install --cask engrmnaveed/tap/display16x
+```
+
+It needs an Apple silicon Mac with macOS 14 or later, and puts **Display 16X.app** in Applications and the `display16x` command in Homebrew's `bin`. It is not notarized by Apple, so macOS blocks its first launch until you allow it in **System Settings → Privacy & Security**, as for DiskUse16x above. The brightness and volume keys also need the Accessibility permission. The [installation guide](https://github.com/engrmnaveed/macdisplay-16x/blob/main/docs/install.md) has the steps, and what each update asks of you, which depends on how the release is signed.
+
+Upgrade with `brew upgrade --cask display16x`. Remove it with `brew uninstall --cask display16x`, after the steps in [Remove Display 16X](https://github.com/engrmnaveed/macdisplay-16x/blob/main/docs/install.md#remove-display-16x), and add `--zap` to also remove its settings.
+
 ## Maintenance
 
 The [release workflow](https://github.com/engrmnaveed/diskuse16x/blob/main/.github/workflows/publish-cli.yml) renders `Casks/diskuse16x.rb`, `Formula/du16x.rb` and `Formula/du16x-pro.rb` for each version tag and commits them here, and keeps `cask_renames.json` mapping `space16x` to `diskuse16x`. See the [release runbook](https://github.com/engrmnaveed/diskuse16x/blob/main/docs/release.md#homebrew-tap).
+
+Display 16X's [release workflow](https://github.com/engrmnaveed/macdisplay-16x/blob/main/.github/workflows/release.yml) renders `Casks/display16x.rb` for each version tag, commits it here, and then installs it from this tap on a clean Mac. See its [release runbook](https://github.com/engrmnaveed/macdisplay-16x/blob/main/docs/release.md#homebrew-tap).
