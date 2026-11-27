@@ -1,6 +1,6 @@
 cask "display16x" do
-  version "0.5.1"
-  sha256 "ab2339624fc9eea4768dc447bd97f586ae7541b2471a982197644295e65349e2"
+  version "0.5.2"
+  sha256 "a600d43a4560d965d4aff1b004b837a622e2e27b61ab69febcb51d206674810a"
 
   url "https://github.com/engrmnaveed/macdisplay-16x/releases/download/v#{version}/display16x-#{version}-macos-arm64.zip"
   name "Display 16X"
